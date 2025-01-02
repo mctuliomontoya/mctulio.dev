@@ -1,21 +1,86 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --font-display: "neue-machina", "sans-serif";
+  --font-machina-inktrap: "neue-machina-ultrabold", "sans-serif";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  @font-face {
+    font-family: 'neue-machina';
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/PPNeueMachina-PlainRegular.otf");
+  }
+  @font-face {
+    font-family: 'neue-machina-ultrabold';
+    font-style: normal;
+    font-weight: 900;
+    src: url("/fonts/PPNeueMachina-InktrapUltrabold.otf");
+  }
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 :root {
+
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #5A6651;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #8FA67E;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: neue-machina, 'sans-serif';
+}
+
+
+.path__sign,
+.line_sign {
+  fill: none;
+  /*stroke: #5A6651;*/
+  stroke: var(--foreground);
+  stroke-width: 1;
+}
+
+.dark .path__sign {
+  stroke: #8FA67E;
+}
+
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(
+          125% 125% at 50% 10%,
+          var(--background) 40%,
+          #2d3626 100%
+  );
 }

@@ -48,6 +48,7 @@ const Landing = () => {
         start: () => `${window.innerHeight * 1.5} top`,
         end: 'max',
         onUpdate: (self) => {
+          // eslint-disable-next-line @typescript-eslint/no-unused-expressions
           self.direction === 1 ? showAnim1.play() : showAnim1.reverse()
         },
       },

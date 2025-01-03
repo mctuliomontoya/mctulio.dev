@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { FooterSection } from '@/app/sections/Footer'
-import ComingSoon from '@/app/components/ComingSoon'
+import Landing from '@/app/sections/Landing'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -10,7 +10,7 @@ const geistSans = Geist({
 })
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+  variable: '--font-display',
   subsets: ['latin'],
 })
 
@@ -29,8 +29,10 @@ export default function RootLayout({
     <body
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-    <ComingSoon ></ComingSoon>
-    {children}
+    <Landing />
+    <div className="container mt-24 overscroll-x-none">
+      {children}
+    </div>
     <FooterSection></FooterSection>
     </body>
     </html>

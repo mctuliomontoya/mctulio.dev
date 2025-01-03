@@ -1,0 +1,49 @@
+.menuButton {
+    position: absolute;
+    top: 10px;
+    left: calc(100% - 100px);
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 999;
+    transition: filter 1s ease 0.2s, color 0.5s ease 0.2s; /* Add delay to the transition */
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--foreground);
+    visibility: hidden;
+    z-index: 100;
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the menu */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.menuCol {
+    display: flex; /* Use flexbox for the column */
+    flex-direction: column; /* Stack items vertically */
+    margin: 40px 20px; /* Margin around the columns */
+}
+
+a {
+    position: relative;
+    background: transparent;
+    border: none;
+    color: var(--contrast);
+    font: 400 20px Arial;
+    text-align: left;
+    outline: none;
+    width: 100%;
+    margin: 15px 0;
+    padding: 0;
+    cursor: pointer;
+    visibility: hidden; /* Initially hidden for animation */
+}
+
+a:hover {
+    font-weight: 800;
+}

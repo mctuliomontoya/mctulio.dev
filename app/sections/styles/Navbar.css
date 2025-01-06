@@ -29,12 +29,12 @@
     margin: 40px 20px; /* Margin around the columns */
 }
 
-a {
+.navLink {
     position: relative;
     background: transparent;
     border: none;
     color: var(--contrast);
-    font: 400 20px Arial;
+    font: 400 28px "mondwest";
     text-align: left;
     outline: none;
     width: 100%;
@@ -44,6 +44,6 @@ a {
     visibility: hidden; /* Initially hidden for animation */
 }
 
-a:hover {
+.navLink:hover {
     font-weight: 800;
 }

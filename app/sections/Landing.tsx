@@ -88,8 +88,8 @@ const Landing = () => {
 
     const menu = gsap.timeline({ paused: true, reversed: true })
       .from(nav, { xPercent: 100, duration: 1, ease: 'power2.inOut' })
-      .from(nav.querySelectorAll('a'), 0.2, { autoAlpha: 0, x: -25, duration: 0.2, stagger: 0.1 })
-      .to('.menuButton', { text: 'CLOSE', duration: 0.5, ease: 'none' }, 0.5)
+      .from(nav.querySelectorAll('.navLink'), 0.2, { autoAlpha: 0, x: -25, duration: 0.2, stagger: 0.1 })
+      .to('.menuButton', { text: ' CLOSE', duration: 0.5, ease: 'none' }, 0.5)
 
     const toggleMenu = () => {
       if (menu.reversed()) {
@@ -138,15 +138,14 @@ const Landing = () => {
       </div>
       <nav ref={navRef} id="menu" className="flex items-center">
         <div className="flex mt-24 flex-row gap-2">
-
           <div className="menuCol one w-10">
-            <a href="https://www.linkedin.com/in/mctulio-montoya/" target="_blank" className="text-black">[lin]</a>
-            <a href="https://github.com/mctuliomontoya" target="_blank">[gh]</a>
-            <a href="">[cv]</a>
+            <a href="https://www.linkedin.com/in/mctulio-montoya/" target="_blank" className="font-pixel navLink">[lin]</a>
+            <a href="https://github.com/mctuliomontoya" target="_blank" className="navLink">[gh]</a>
+            <a href="" className="navLink">[cv]</a>
           </div>
           <div className="menuCol two w-10">
-            <a href="mailto:mctulio.dev@gmail.com">[mail]</a>
-            <a href="#link5">[blog]</a>
+            <a href="mailto:mctulio.dev@gmail.com" className="navLink">[mail]</a>
+            <a href="#link5" className="navLink">[blog]</a>
           </div>
         </div>
       </nav>

@@ -27,9 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-foreground selection:text-contrast`}
     >
-    <Landing />
     <div className="container mt-24 overscroll-x-none">
       {children}
     </div>

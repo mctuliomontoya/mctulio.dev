@@ -59,7 +59,7 @@ export const FooterSection = () => {
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}
         transition={{ duration: 1 }}
-        className='mt-10 mb-10 md:mt-16 text-center text-4xl'
+        className='mt-10 mb-10 md:mt-16 text-center font-display text-4xl'
       >
         Contact me
       </motion.h2>

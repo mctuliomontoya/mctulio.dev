@@ -17,7 +17,7 @@
     height: 100%;
     background-color: var(--foreground);
     visibility: hidden;
-    z-index: 100;
+    z-index: 50;
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Center the menu */
     align-items: flex-start; /* Align items to the top */

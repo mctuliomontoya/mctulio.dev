@@ -59,6 +59,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #AAF731;
+    /*--foreground: #5A6651;*/
     --contrast: black;
 
     --foreground-darker: #41600f;

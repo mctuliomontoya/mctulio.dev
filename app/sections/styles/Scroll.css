@@ -8,7 +8,8 @@
     min-height: 100px !important;
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 60;
+    backdrop-filter: blur(10px);
 }
 
 #logo {
@@ -17,10 +18,18 @@
     left: 50%;
     transform: translate(-50%);
     height: auto;
-    z-index: 999;
+    z-index: 70;
     filter: brightness(1);
     transition: filter 1s ease 0.2s, color 0.5s ease 0.2s;
 }
+
+/*!* styles/Scroll.css or a new CSS file *!*/
+/*@media (max-width: 768px) {*/
+/*    #logo {*/
+/*        position: relative; !* Ensure the logo is positioned relative to its normal position *!*/
+/*        top: 50px; !* Adjust this value as needed *!*/
+/*    }*/
+/*}*/
 
 .anegro {
     color: var(--contrast);

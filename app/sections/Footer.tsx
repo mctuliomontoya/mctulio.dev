@@ -1,7 +1,7 @@
 'use client'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import Heart from '../components/Heart'
+import Heart from './../components/Heart'
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },

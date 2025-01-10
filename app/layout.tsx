@@ -29,10 +29,11 @@ export default function RootLayout({
     <body
       className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-foreground selection:text-contrast`}
     >
-    <div className="container mt-24 overscroll-x-none">
+    <div className="container mx-auto mt-24 overscroll-x-none">
+
       {children}
-    </div>
     <FooterSection></FooterSection>
+    </div>
     </body>
     </html>
   )

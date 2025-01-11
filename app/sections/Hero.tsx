@@ -24,14 +24,14 @@ export default function Hero() {
               develop new experiences for users, and expand my knowledge in the area.
               <br />
 
-              I<Heart />design & development, especially React.
+              I<Heart />web design & development, especially React.
             </span>
           </div>
         </div>
         <div className="w-full h-full lg:w-1/2 lg:p-8 ">
           <div
 
-            className="flex justify-center content-center"
+            className="flex justify-end content-center"
           >
             <div
               className="font-mono text-[6px] md:text-[8px] md:leading-[0.7rem] lg:text-[11px] lg:leading-[0.9rem] leading-[0.5rem]"

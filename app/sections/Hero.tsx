@@ -31,10 +31,10 @@ export default function Hero() {
         <div className="w-full h-full lg:w-1/2 lg:p-8 ">
           <div
 
-            className="flex justify-center md:justify-end content-center"
+            className="flex justify-center md:justify-center lg:justify-end content-center"
           >
             <div
-              className="font-mono text-[6px] md:text-[8px] md:leading-[0.7rem] lg:text-[11px] lg:leading-[0.9rem] leading-[0.5rem]"
+              className="font-mono text-[6px] md:text-[8px] md:leading-[0.7rem] xl:text-[11px] xl:leading-[0.9rem] leading-[0.5rem]"
               dangerouslySetInnerHTML={{ __html: MarcoPhoto }}></div>
           </div>
         </div>

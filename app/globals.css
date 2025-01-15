@@ -54,6 +54,7 @@
   --foreground: #AAF731;
   --contrast: black;
   --foreground-darker: #41600f;
+  scrollbar-width: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -62,6 +63,7 @@
     --foreground: #AAF731;
     --contrast: black;
     --foreground-darker: #41600f;
+    scrollbar-width: none;
   }
 }
 

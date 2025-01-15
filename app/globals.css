@@ -53,15 +53,14 @@
   --background: #0a0a0a;
   --foreground: #AAF731;
   --contrast: black;
+  --foreground-darker: #41600f;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #AAF731;
-    /*--foreground: #5A6651;*/
     --contrast: black;
-
     --foreground-darker: #41600f;
   }
 }
@@ -71,7 +70,6 @@ body {
   background: var(--background);
   font-family: neue-machina, 'sans-serif';
 }
-
 
 .path__sign,
 .line_sign {
@@ -85,7 +83,6 @@ body {
   stroke: #8FA67E;
 }
 
-
 #background {
   position: fixed;
   top: 0;
@@ -96,7 +93,6 @@ body {
   background: radial-gradient(
           125% 125% at 50% 10%,
           var(--background) 40%,
-          /*#2d3626 100%*/
           var(--foreground-darker) 100%
   );
 }

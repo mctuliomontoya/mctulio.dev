@@ -4,7 +4,7 @@ import { AboutAsciiPhoto} from '@/app/components/AboutAsciiPhoto'
 
 export default function About() {
   return (
-    <div className="border-b border-foreground/40 pb-4 pt-4 lg:pt-20 items-center justify-around lg:pb-36 ">
+    <div className="border-b border-foreground/40 pb-4 pt-4 lg:pt-20 items-center justify-around lg:pb-36 overflow-x-hidden ">
       <h4 className="my-10 md:my-16 text-center text-4xl">About Me</h4>
       <div className="flex flex-wrap">
         <motion.div

@@ -67,7 +67,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             transition={{ duration: 0.5 }}
           >
             <div className="absolute inset-0">
-              <Slider ref={(slider) => (sliderRef = slider)} {...settings}>
+              <Slider ref={(slider: null) => (sliderRef = slider)} {...settings}>
                 {project.images.map((image, index) => (
                   <div key={index} className="relative h-[50vh] w-full">
                     <Image

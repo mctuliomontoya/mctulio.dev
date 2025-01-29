@@ -50,9 +50,9 @@
 :root {
   /*--background: #ffffff;*/
   /*--foreground: #5A6651;*/
-  --background: #0a0a0a;
-  --foreground: #AAF731;
-  --contrast: black;
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --contrast: #AAF731;
   --foreground-darker: #41600f;
   scrollbar-width: none;
 }

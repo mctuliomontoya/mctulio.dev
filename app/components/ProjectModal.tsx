@@ -50,11 +50,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={onClose}
-      className="fixed inset-0 bg-foreground/20 backdrop-filter-md bg-opacity-50 flex items-center justify-center p-4 z-50"
+      className="fixed inset-0 overflow-y-hidden bg-foreground/20 backdrop-filter-md bg-opacity-50 flex items-center justify-center p-4 z-50"
     >
       <motion.div
         layoutId={`project-${project.id}`}
-        className="bg-background rounded-lg overflow-hidden shadow-xl w-full max-w-xs sm:max-w-sm md:max-w-2xl"
+        className="bg-background rounded-lg overflow-hidden shadow-xl w-full md:max-w-2xl"
         style={{ maxHeight: "90vh" }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -92,7 +92,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               >
                 <motion.button
                   onClick={goToPrev}
-                  className="pointer-events-auto bg-background/50 rounded-full p-2 hover:bg-background/75 transition-opacity"
+                  className="pointer-events-auto bg-background/50 rounded-full p-2 hover:bg-contrast/75 transition-opacity"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -100,7 +100,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </motion.button>
                 <motion.button
                   onClick={goToNext}
-                  className="pointer-events-auto bg-background/50 rounded-full p-2 hover:bg-black/75 transition-opacity"
+                  className="pointer-events-auto bg-background/50 rounded-full p-2 hover:bg-contrast/75 transition-opacity"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -109,7 +109,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </motion.div>
             </AnimatePresence>
             <motion.div
-              className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50  px-2 py-1 rounded-full text-sm"
+              className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/50  px-2 py-1 rounded-full text-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -118,7 +118,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </motion.div>
           </motion.div>
           <motion.div
-            className="p-6 bg-black overflow-y-auto"
+            className="p-6 bg-background overflow-y-auto"
             style={{ maxHeight: "calc(40vh - 2rem)" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

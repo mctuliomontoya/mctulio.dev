@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import ProjectModal from './ProjectModal'
+import { twMerge } from 'tailwind-merge'
 
 interface Project {
   id: number
@@ -52,8 +53,9 @@ export default function PortfolioGrid() {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <h4 className="my-10 md:my-16 text-center text-4xl">Projects</h4>
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 gap-4"
+        className="md:w-1/2 mx-auto grid grid-cols-1 md:grid-cols-4  gap-4"
         initial="hidden"
         animate="visible"
         variants={{
@@ -71,7 +73,7 @@ export default function PortfolioGrid() {
             key={project.id}
             layoutId={`project-${project.id}`}
             onClick={() => setSelectedId(project.id)}
-            className="cursor-pointer overflow-hidden rounded-lg shadow-lg"
+            className={twMerge("cursor-pointer overflow-hidden col-span-2 rounded-lg shadow-lg", + project.id === 1 || project.id === 4 ? "md:col-span-1" : "md:col-span-3")}
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 }
@@ -79,7 +81,7 @@ export default function PortfolioGrid() {
             // whileHover={{ scale: 1.05 }}
             // whileTap={{ scale: 0.95 }}
           >
-            <motion.div className="w-full h-0 pb-[75%] md:pb-[100%] relative">
+            <motion.div className="w-full h-full  pb-[75%] md:pb-[100%] relative">
               <Image
                 src={project.images[0] || "/placeholder.svg"}
                 alt={project.title}

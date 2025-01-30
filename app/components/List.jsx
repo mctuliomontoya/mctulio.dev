@@ -24,7 +24,7 @@ function Card({ id, title, category, theme }) {
           </motion.div>
         </motion.div>
       </div>
-      <Link to={id} className={`card-open-link`} />
+      <Link to={`/${id}`} className={`card-open-link`} />
     </li>
   );
 }

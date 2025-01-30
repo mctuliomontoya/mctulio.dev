@@ -5,7 +5,7 @@ import About from '@/app/sections/About'
 import './globals.css'
 import PortfolioGrid from '@/app/components/PortfolioGrid'
 import { AnimatePresence } from "framer-motion";
-import { Item } from './components/Item'
+import { Item } from '@/app/components/Item'
 import { List } from '@/app/components/List'
 import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom'
 

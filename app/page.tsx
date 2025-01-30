@@ -33,6 +33,7 @@ function Store({ match }: StoreProps) {
 
 function StoreWrapper() {
   const params = useParams();
+  // @ts-expect-error: this line needs to add a specific type in the future.
   return <Store match={{ params }} />;
 }
 

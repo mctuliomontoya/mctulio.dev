@@ -23,16 +23,45 @@ interface ProjectModalProps {
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   let sliderRef: Slider | null = null
-
+  const SlickArrowLeft = ({ currentSlide, ...props }) => (
+    <button
+      {...props}
+      className={
+        "slick-prev slick-arrow" +
+        (currentSlide === 0 ? " slick-disabled" : "")
+      }
+      aria-hidden="true"
+      aria-disabled={currentSlide === 0}
+      type="button"
+    >
+      Previous
+    </button>
+  );
+  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+    <button
+      {...props}
+      className={
+        "slick-next slick-arrow" +
+        (currentSlide === slideCount - 1 ? " slick-disabled" : "")
+      }
+      aria-hidden="true"
+      aria-disabled={currentSlide === slideCount - 1}
+      type="button"
+    >
+      Next
+    </button>
+  );
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    beforeChange: (current: number, next : number) => setCurrentSlide(next),
-    nextArrow: <div></div>,
-    prevArrow: <div></div>,
+    beforeChange: (current: number, next: number) => setCurrentSlide(next),
+    slickPrev: <div></div>,
+    slickNext: <div></div>,
+    prevArrow: <SlickArrowLeft />,
+    nextArrow: <SlickArrowRight />,
     adaptiveHeight: true,
   }
 
@@ -59,28 +88,26 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         onClick={(e) => e.stopPropagation()}
       >
         <motion.div className="relative h-full flex flex-col">
+          {/* Image Section */}
           <motion.div
             className="relative bg-background"
             style={{ height: "50vh" }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
           >
             <div className="absolute inset-0">
               {/*@ts-expect-error: this is not typed.*/}
-              <Slider ref={(slider) => (sliderRef = slider)} {...settings}>
-                {project.images.map((image, index) => (
-                  <div key={index} className="relative h-[50vh] w-full">
-                    <Image
-                      src={image || "/placeholder.svg"}
-                      alt={`${project.title} - Image ${index + 1}`}
-                      fill
-                      className="object-cover"
-                      priority={index === 0}
-                    />
-                  </div>
-                ))}
-              </Slider>
+                <Slider ref={(slider) => (sliderRef = slider)} {...settings}>
+                  {project.images.map((image, index) => (
+                    <div key={index} className="relative h-[50vh] w-full">
+                      <Image
+                        src={image || "/placeholder.svg"}
+                        alt={`${project.title} - Image ${index + 1}`}
+                        fill
+                        className="object-cover"
+                        priority={index === 0}
+                      />
+                    </div>
+                  ))}
+                </Slider>
             </div>
             <AnimatePresence>
               <motion.div
@@ -109,7 +136,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </motion.div>
             </AnimatePresence>
             <motion.div
-              className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/50  px-2 py-1 rounded-full text-sm"
+              className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/50 px-2 py-1 rounded-full text-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -117,34 +144,22 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               {currentSlide + 1} / {project.images.length}
             </motion.div>
           </motion.div>
+
+          {/* Content Section */}
           <motion.div
             className="p-6 bg-background overflow-y-auto"
             style={{ maxHeight: "calc(40vh - 2rem)" }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
           >
-            <motion.h2
-              className="text-xl md:text-2xl font-bold mb-4"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
+            <h2 className="text-xl md:text-2xl font-bold mb-4">
               {project.title}
-            </motion.h2>
-            <motion.p
-              className="text-sm md:text-base"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
+            </h2>
+            <p className="text-sm md:text-base">
               {project.description}
-            </motion.p>
+            </p>
           </motion.div>
+
+          {/* Close Button */}
           <motion.button
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
             onClick={onClose}
             className="absolute top-4 right-4 z-10 bg-background/50 rounded-full p-1"
             whileHover={{ scale: 1.1 }}
@@ -157,4 +172,3 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     </motion.div>
   )
 }
-

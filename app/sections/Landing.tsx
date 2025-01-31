@@ -141,11 +141,11 @@ const Landing = () => {
           <div className="menuCol one w-10">
             <a href="https://www.linkedin.com/in/mctulio-montoya/" target="_blank" className="font-pixel navLink">[lin]</a>
             <a href="https://github.com/mctuliomontoya" target="_blank" className="navLink">[gh]</a>
-            <a href="" className="navLink">[cv]</a>
+            <a href="/Resume.pdf" target="_blank" className="navLink">[cv]</a>
           </div>
           <div className="menuCol two w-10">
             <a href="mailto:mctulio.dev@gmail.com" className="navLink">[mail]</a>
-            <a href="#link5" className="navLink">[blog]</a>
+            <a href="#link5" className="relative text-align-left font-pixel text-black/50 text-[28px] mt-[7.5px] ">[blog]</a>
           </div>
         </div>
       </nav>

@@ -23,7 +23,8 @@ interface ProjectModalProps {
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   let sliderRef: Slider | null = null
-  const SlickArrowLeft = ({ currentSlide, ...props }) => (
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const SlickArrowLeft = ({ currentSlide, slideCount, ...props } : {currentSlide: number, slideCount: number}) => (
     <button
       {...props}
       className={
@@ -37,7 +38,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       Previous
     </button>
   );
-  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+  const SlickArrowRight = ({ currentSlide, slideCount, ...props } : {currentSlide: number, slideCount: number}) => (
     <button
       {...props}
       className={
@@ -60,7 +61,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     beforeChange: (current: number, next: number) => setCurrentSlide(next),
     slickPrev: <div></div>,
     slickNext: <div></div>,
+    // @ts-expect-error: the attributes are passed by the package
     prevArrow: <SlickArrowLeft />,
+    // @ts-expect-error: the attributes are passed by the package
     nextArrow: <SlickArrowRight />,
     adaptiveHeight: true,
   }

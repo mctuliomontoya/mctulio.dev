@@ -56,23 +56,17 @@ export const FooterSection = () => {
 
   return (
     <div className='pb-2 text-foreground'>
-      <motion.h2
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: -100 }}
-        transition={{ duration: 1 }}
+      <h2
         className='mt-10 mb-10 md:mt-16 text-center font-display text-4xl'
       >
         Contact me
-      </motion.h2>
+      </h2>
       <div className='text-center tracking-tighter'>
-        <motion.p
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 1 }}
+        <p
           className='my-2'
         >
           Sonora, México
-        </motion.p>
+        </p>
         <a href='mailto:mctulio.dev@gmail.com' className='underline'>
           mctulio.dev@gmail.com
         </a>

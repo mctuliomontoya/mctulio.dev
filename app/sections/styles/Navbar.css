@@ -17,16 +17,16 @@
     height: 100%;
     background-color: var(--foreground);
     visibility: hidden;
-    z-index: 50;
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center the menu */
-    align-items: flex-start; /* Align items to the top */
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .menuCol {
-    display: flex; /* Use flexbox for the column */
-    flex-direction: column; /* Stack items vertically */
-    margin: 40px 20px; /* Margin around the columns */
+    display: flex;
+    flex-direction: column;
+    margin: 40px 20px;
 }
 
 .navLink {
@@ -41,7 +41,7 @@
     margin: 15px 0;
     padding: 0;
     cursor: pointer;
-    visibility: hidden; /* Initially hidden for animation */
+    visibility: hidden;
 }
 
 .navLink:hover {

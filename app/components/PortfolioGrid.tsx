@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import ProjectModal from './ProjectModal'
 import { twMerge } from 'tailwind-merge'
+import { TAGS } from '@/app/constants/tags'
+import { Tag } from '../types/tag'
 
 interface Project {
   id: number
@@ -13,6 +15,7 @@ interface Project {
   description: JSX.Element
   images: string[]
   link?: string
+  technologies: Tag[]
 }
 
 const projects: Project[] = [
@@ -38,6 +41,7 @@ const projects: Project[] = [
       "/images/projects/te-ai-cup/08.webp?height=300&width=300",
       "/images/projects/te-ai-cup/09.gif?height=300&width=300",
     ],
+    technologies: [TAGS.MACHINE_VISION, TAGS.MERLIC, TAGS.PYTHON]
   },
   {
     id: 2,
@@ -59,7 +63,8 @@ const projects: Project[] = [
       "/images/projects/blockforge/05.webp?height=300&width=300",
       "/images/projects/blockforge/06.webp?height=300&width=300",
     ],
-    link: "https://frontend-saas.vercel.app/"
+    link: "https://frontend-saas.vercel.app/",
+    technologies: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.REACT, TAGS.TAILWIND]
   },
   {
     id: 3,
@@ -79,6 +84,12 @@ const projects: Project[] = [
       "/images/projects/bamx/03.webp?height=300&width=300",
       "/images/projects/bamx/04.webp?height=300&width=300",
     ],
+    technologies: [
+      TAGS.TYPESCRIPT,
+      TAGS.TAILWIND,
+      TAGS.REACT_NATIVE,
+      TAGS.EXPO,
+    ],
   },
   {
     id: 4,
@@ -96,6 +107,7 @@ const projects: Project[] = [
       "/images/projects/covid-alignments/02.webp?height=300&width=300",
       "/images/projects/covid-alignments/03.webp?height=300&width=300",
     ],
+    technologies: [TAGS.RSTUDIO]
   },
 ]
 

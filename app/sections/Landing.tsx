@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import './styles/Scroll.css'
 import './styles/Navbar.css'
+import Balatro from '@components/Balatro'
 
 const Landing = () => {
 
@@ -129,23 +130,37 @@ const Landing = () => {
 
   return (
     <React.Fragment>
-      <div id="hero"></div>
+      <div id="hero" className="h-screen w-screen">
+
+        <Balatro
+
+          isRotate={false}
+          mouseInteraction={true}
+          pixelFilter={2000}
+        >
+        </Balatro>
+      </div>
       <div id="greatLogo">
-        <h1 className="font-pixel text-5xl w-full text-center text-[14.67738507vw]" id="logo">Marco Montoya.</h1>
+        <h1 className="font-pixel text-5xl w-full text-center text-[14.67738507vw] select-none pointer-events-none" id="logo">Marco Montoya.</h1>
+
       </div>
       <div id="menuSticky">
-        <div id="menuButton" className="menuButton font-pixel mt-5" ref={menuButtonRef}> MENU</div>
+        <div id="menuButton" role='button' className="cursor-none menuButton font-pixel mt-5"
+             ref={menuButtonRef}> MENU
+        </div>
       </div>
       <nav ref={navRef} id="menu" className="flex items-center">
         <div className="flex mt-24 flex-row gap-2">
           <div className="menuCol one w-10">
-            <a href="https://www.linkedin.com/in/mctulio-montoya/" target="_blank" className="font-pixel navLink">[lin]</a>
+            <a href="https://www.linkedin.com/in/mctulio-montoya/" target="_blank"
+               className="font-pixel navLink">[lin]</a>
             <a href="https://github.com/mctuliomontoya" target="_blank" className="navLink">[gh]</a>
             <a href="/Resume.pdf" target="_blank" className="navLink">[cv]</a>
           </div>
           <div className="menuCol two w-10">
             <a href="mailto:mctulio.dev@gmail.com" className="navLink">[mail]</a>
-            <a href="#link5" className="relative text-align-left font-pixel text-black/50 text-[28px] mt-[7.5px] ">[blog]</a>
+            <a href="#link5"
+               className="relative text-align-left font-pixel text-black/50 cursor-none text-[28px] mt-[7.5px] ">[blog]</a>
           </div>
         </div>
       </nav>

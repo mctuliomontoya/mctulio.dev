@@ -1,25 +1,29 @@
-"use client"
-// import dynamic from 'next/dynamic'
-import Landing from '@/app/sections/Landing'
-import Hero from '@/app/sections/Hero'
-import About from '@/app/sections/About'
-import './globals.css'
-import PortfolioGrid from '@/app/components/PortfolioGrid'
+"use client";
 
-// Dynamically import the router components with SSR disabled
-// const RouterComponent = dynamic(() => import('@/app/components/RouterComponent'), {
-//   ssr: false
-// })
+import Landing from '@/app/sections/Landing';
+import Hero from '@/app/sections/Hero';
+import About from '@/app/sections/About';
+import './globals.css';
+import PortfolioGrid from '@/app/components/PortfolioGrid';
+// import { Certificates } from '@/app/sections/Certificates'
 
 export default function Home() {
+
+
   return (
     <>
-      <div id='background'></div>
+      {/*<CustomCursor/>*/}
+      <div id="background"></div>
+
       <Landing />
-      <Hero />
-      {/*<RouterComponent />*/}
-      <About />
-      <PortfolioGrid />
+
+      <div className='container mx-auto'>
+
+        <Hero />
+        <About />
+        <PortfolioGrid />
+        {/*<Certificates />*/}
+      </div>
     </>
-  )
+  );
 }

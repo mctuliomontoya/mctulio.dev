@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import type { TechCardProps } from "app/types/tech-card-props"
 import type { TechCategory } from "app/types/tech-category"
 import { technologies } from "app/sections/data/technologies"
+import { IconGlobe } from '@components/ui/IconGlobe'
 
 function TechCard({ title, icon, color, description }: TechCardProps) {
   return (
@@ -226,6 +227,12 @@ export default function TechStack() {
               onClick={setActiveCategory}
               label="Tools & Databases"
             />
+            <CategoryButton
+              category="globe"
+              activeCategory={activeCategory}
+              onClick={setActiveCategory}
+              label="Globe"
+            />
           </div>
         </div>
 
@@ -253,30 +260,38 @@ export default function TechStack() {
           )}
 
           {/* Tech Cards Grid with fixed height */}
-          <div className="min-h-[400px] sm:min-h-[500px] md:min-h-[400px] relative">
-            <div
-              className="grid grid-cols-1 w-2/3 mx-auto sm:w-full gap-3 sm:gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3 content-start"
-              style={getSwipeStyle()}
-            >
-              {currentTechnologies.map((tech, index) => (
-                <TechCard
-                  key={`${tech.title}-${index}`}
-                  title={tech.title}
-                  icon={tech.icon}
-                  color={tech.color}
-                  description={tech.description}
-                  category={tech.category}
-                />
-              ))}
-            </div>
+          { activeCategory === "globe" && (
+            <IconGlobe />
+            )
+          }
 
-            {/* Empty state */}
-            {filteredTechnologies.length === 0 && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-sm sm:text-base text-white/70">No technologies found in this category.</p>
+          { activeCategory !== "globe" && (
+            <div className="min-h-[400px] sm:min-h-[500px] md:min-h-[400px] relative">
+              <div
+                className="grid grid-cols-1 w-2/3 mx-auto sm:w-full gap-3 sm:gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3 content-start"
+                style={getSwipeStyle()}
+              >
+                {currentTechnologies.map((tech, index) => (
+                  <TechCard
+                    key={`${tech.title}-${index}`}
+                    title={tech.title}
+                    icon={tech.icon}
+                    color={tech.color}
+                    description={tech.description}
+                    category={tech.category}
+                  />
+                ))}
               </div>
-            )}
-          </div>
+
+              {/* Empty state */}
+              {filteredTechnologies.length === 0 && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <p className="text-sm sm:text-base text-white/70">No technologies found in this category.</p>
+                </div>
+              )}
+            </div>
+          )}
+
 
           {/* Mobile swipe hint - show only on first load */}
           {totalPages > 1 && (

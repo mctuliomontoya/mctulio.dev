@@ -1,1 +1,1 @@
-export type TechCategory = "all" | "languages" | "frameworks" | "cloud" | "tools"
+export type TechCategory = "all" | "languages" | "frameworks" | "cloud" | "tools" | "globe"

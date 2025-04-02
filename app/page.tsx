@@ -5,8 +5,8 @@ import Hero from '@/app/sections/Hero';
 import About from '@/app/sections/About';
 import './globals.css';
 import PortfolioGrid from '@/app/components/PortfolioGrid';
-// import { Certificates } from '@/app/sections/Certificates'
 
+import TechStack from '@/app/sections/TechStack'
 export default function Home() {
 
 
@@ -23,6 +23,8 @@ export default function Home() {
         <About />
         <PortfolioGrid />
         {/*<Certificates />*/}
+        {/*<WebCertificates />*/}
+        <TechStack />
       </div>
     </>
   );

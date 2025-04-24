@@ -7,6 +7,7 @@ import './globals.css';
 import PortfolioGrid from '@/app/components/PortfolioGrid';
 
 import TechStack from '@/app/sections/TechStack'
+import { FooterSection } from '@/app/sections/Footer'
 export default function Home() {
 
 
@@ -25,6 +26,7 @@ export default function Home() {
         {/*<Certificates />*/}
         {/*<WebCertificates />*/}
         <TechStack />
+        <FooterSection></FooterSection>
       </div>
     </>
   );

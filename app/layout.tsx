@@ -45,7 +45,6 @@ export default function RootLayout({
     <div className=" mx-auto overscroll-x-none">
 
       {children}
-      <FooterSection></FooterSection>
     </div>
     </body>
     </html>

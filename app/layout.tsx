@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 
 import { Geist, Geist_Mono } from 'next/font/google'
-import { FooterSection } from '@/app/sections/Footer'
 
 import './globals.css'
 
@@ -27,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <head>
+    <head title={'Marco Montoya'}>
       <meta
         name="theme-color"
         content="#AAF731"

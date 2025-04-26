@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className='w-full h-screen flex flex-col items-center justify-center'>
       <div className='text-lg mt-4'>
-        <Image src={'/marco-image.webp'} alt={'se'} className={'size-25 size-40 w-full'} width={100}
+        <Image src={'/marco-image.webp'} alt={'se'} className={'size-25 size-40'} width={100}
                height={100} />
       </div>
       <div className='text-3xl font-bold  mb-5 text-center border-b-1 border-dashed border-foreground'>

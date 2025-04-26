@@ -23,11 +23,12 @@ export default function Home() {
         <Hero />
         <About />
         <PortfolioGrid />
-        {/*<Certificates />*/}
+        <WebCertificates />
         {/*<WebCertificates />*/}
         <TechStack />
         <FooterSection></FooterSection>
       </div>
+
     </>
   );
 }

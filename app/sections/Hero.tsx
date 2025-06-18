@@ -1,6 +1,6 @@
 'use client'
 import HeroAnimatedText from '../components/HeroAnimatedText'
-import { MarcoPhoto } from '@/app/components/MarcoPhoto'
+import { MarcoPhoto } from '@/app/components/image/MarcoPhoto'
 import Heart from '@/app/components/Heart'
 
 export default function Hero() {
@@ -34,7 +34,7 @@ export default function Hero() {
             className="flex justify-center md:justify-center lg:justify-end content-center"
           >
             <div
-              className="font-mono text-[6px] md:text-[8px] md:leading-[0.7rem] xl:text-[11px] xl:leading-[0.9rem] leading-[0.5rem]"
+              className="bg-black font-mono text-[6px] md:text-[8px] md:leading-[0.7rem] xl:text-[11px] xl:leading-[0.9rem] leading-[0.5rem]"
               dangerouslySetInnerHTML={{ __html: MarcoPhoto }}></div>
           </div>
         </div>

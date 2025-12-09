@@ -5,7 +5,7 @@ import Landing from '@/app/sections/Landing'
 import Hero from '@/app/sections/Hero'
 import About from '@/app/sections/About'
 import './globals.css'
-
+import Head from 'next/head'
 // Dynamically import larger components with loading fallbacks
 const PortfolioGrid = dynamic(
   () => import('@/app/components/features/PortfolioGrid/PortfolioGrid'),
@@ -41,6 +41,13 @@ const FooterSection = dynamic(
 export default function Home() {
   return (
     <>
+      <Head>
+        <script
+          src='https://analytics.ahrefs.com/analytics.js'
+          data-key='fzO2hITsOnntA3h3XpEimg'
+          async
+        ></script>
+      </Head>
       {/*<CustomCursor/>*/}
       <div id='background'></div>
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Heart = () => {
   return (
-    <span className="relative inline-flex mb-1 mx-2 h-5 w-5">
+    <span className=" relative inline-flex mb-1 mx-2 h-5 w-5">
       <span className="animate-ping absolute top-0 right-0 inline-flex h-full w-full opacity-75">
         <svg
           xmlns="http://www.w3.org/2000/svg"

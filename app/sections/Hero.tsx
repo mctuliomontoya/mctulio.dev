@@ -2,6 +2,7 @@
 import HeroAnimatedText from '../components/HeroAnimatedText'
 import { MarcoPhoto } from '@/app/components/Image/MarcoPhoto'
 import Heart from '@/app/components/Heart'
+import { GitHubCalendar } from 'react-github-calendar'
 
 export default function Hero() {
   return (
@@ -12,6 +13,7 @@ export default function Hero() {
             <span className='bg-gradient-to-r from-foreground via-foreground to-white bg-clip-text text-md tracking-tight text-transparent'>
               <HeroAnimatedText />
             </span>
+            <GitHubCalendar username="mctuliomontoya" />
 
             <span className='my-2 max-w-xl py-6 text-lg lg:text-xl md:mx-0 font-light tracking-tighter mx-4'>
               I&apos;m a passionate computer engineering student at Instituto

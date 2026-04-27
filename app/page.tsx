@@ -1,11 +1,10 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import Landing from '@/app/sections/Landing'
-import Hero from '@/app/sections/Hero'
+import { GradientLanding } from '@/app/pages/gradient/page'
 import About from '@/app/sections/About'
 import './globals.css'
-import Head from 'next/head'
+import { Quote } from '@components/text/Quote'
 // Dynamically import larger components with loading fallbacks
 const PortfolioGrid = dynamic(
   () => import('@/app/components/features/PortfolioGrid/PortfolioGrid'),
@@ -41,20 +40,12 @@ const FooterSection = dynamic(
 export default function Home() {
   return (
     <>
-      <Head>
-        <script
-          src='https://analytics.ahrefs.com/analytics.js'
-          data-key='fzO2hITsOnntA3h3XpEimg'
-          async
-        ></script>
-      </Head>
-      {/*<CustomCursor/>*/}
-      <div id='background'></div>
+      <div id='background' style={{ opacity: 0 }}></div>
 
-      <Landing />
+      <GradientLanding />
+      <Quote></Quote>
 
       <div className='container mx-auto'>
-        <Hero />
         <About />
         <PortfolioGrid />
         <TechStack />

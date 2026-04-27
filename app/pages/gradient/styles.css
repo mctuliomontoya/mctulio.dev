@@ -1,0 +1,205 @@
+/* Gradient landing styles */
+
+.gradient_trigger {
+  width: 100%;
+  aspect-ratio: 0.8;
+  position: relative;
+}
+
+.gradient_wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.gradient_wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Base spacer */
+.spacer {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.spacer-a {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Fixed logo — lives outside the combined slide, overlays on left */
+#logo {
+  position: fixed;
+  left: 8vw;
+  top: 50%;
+  font-size: clamp(36px, 5.5vw, 96px);
+  color: var(--foreground);
+  z-index: 102;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  opacity: 0; /* GSAP controls visibility — prevents flash before hydration */
+  transition: font-size 0.5s ease, color 0.5s ease 0.2s;
+}
+
+/* Small nav state — CSS class applied by GSAP callback */
+#logo.logo-nav {
+  font-size: 28px;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+
+.scroll-track {
+  width: 1px;
+  height: 56px;
+  background: rgba(170, 247, 49, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-thumb {
+  width: 1px;
+  height: 18px;
+  background: #aaf731;
+  position: absolute;
+  top: -18px;
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0% {
+    top: -18px;
+    opacity: 1;
+  }
+  75% {
+    top: 56px;
+    opacity: 0.2;
+  }
+  100% {
+    top: 56px;
+    opacity: 0;
+  }
+}
+
+/* Combined slide — grid pushed to the right, logo is the fixed overlay on the left */
+.combined-layout {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0 8vw;
+}
+
+.grid-col {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 768px) {
+  .combined-layout {
+    height: 50vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 8vh;
+  }
+
+  #logo {
+    left: 50%;
+    top: 22%;
+    font-size: clamp(32px, 9vw, 64px);
+    text-align: center;
+    /* GSAP controls xPercent/yPercent — no CSS transform here */
+  }
+}
+
+/* Menu bar — fixed, hidden until logo reaches it */
+#menuSticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 75px;
+  z-index: 101;
+  backdrop-filter: blur(10px);
+}
+
+.menuButton {
+  position: absolute;
+  top: 10px;
+  left: calc(100% - 100px);
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 999;
+  color: var(--foreground);
+  transition: color 0.5s ease 0.2s;
+}
+
+.anegro {
+  color: var(--contrast) !important;
+}
+
+/* Nav overlay */
+#menu {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--foreground);
+  visibility: hidden;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.menuCol {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 20px;
+}
+
+.navLink {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: var(--contrast);
+  font: 400 28px "mondwest";
+  text-align: left;
+  outline: none;
+  width: 100%;
+  margin: 15px 0;
+  padding: 0;
+  cursor: pointer;
+  visibility: hidden;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  font-weight: 800;
+}

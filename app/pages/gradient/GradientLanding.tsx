@@ -195,7 +195,7 @@ export function GradientLanding() {
   }, [])
 
   return (
-    <>
+    <div className="relative">
       {/* Fixed logo — starts centered in combined slide, flies to nav after pin */}
       <h1
         id="logo"
@@ -285,14 +285,6 @@ export function GradientLanding() {
 
       {/* Sentinel — marks the exact end of the gradient intro for the #background trigger */}
       <div id="gradient-end" style={{ height: 0 }} />
-    </>
-  )
-}
-
-export default function GradientPage() {
-  return (
-    <div className="relative">
-      <GradientLanding />
     </div>
   )
 }

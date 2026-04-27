@@ -1,7 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { GradientLanding } from '@/app/pages/gradient/page'
+import { GradientLanding } from '@/app/pages/gradient/GradientLanding'
 import About from '@/app/sections/About'
 import './globals.css'
 import { Quote } from '@components/text/Quote'

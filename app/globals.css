@@ -4,6 +4,8 @@
   --font-display: "neue-machina", "sans-serif";
   --font-machina-inktrap: "neue-machina-ultrabold", "sans-serif";
   --font-pixel: "mondwest", "sans-serif";
+  --font-instrument: "instrument-serif", "sans-serif";
+  --font-instrument-italic: "instrument-italic", "sans-serif";
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -37,6 +39,19 @@
     font-style: normal;
     font-weight: 400;
     src: url("/fonts/PPMondwest-Regular.otf");
+  }
+  @font-face {
+    font-family: 'instrument-serif';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/InstrumentSerif-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'instrument-italic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/InstrumentSerif-Italic.ttf');
+
   }
   *,
   ::after,

@@ -1,0 +1,26 @@
+
+
+.art-row {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    white-space: pre;
+    font-family: Georgia, Palatino, "Times New Roman", serif;
+    font-size: 14px;
+}
+.source-canvas {
+    display: block;
+    width: 100%;
+    height: 448px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 4px;
+}
+#mono-box .art-row { font: 400 14px/16px "Courier New", Courier, monospace; color: rgba(130,155,210,0.7); }
+.w3 { font-weight: 300; } .w5 { font-weight: 500; } .w8 { font-weight: 800; }
+.it { font-style: italic; }
+.a1 { color: rgba(181, 255, 0,0.10); } .a2 { color: rgba(181, 255, 0,0.20); }
+.a3 { color: rgba(181, 255, 0,0.30); } .a4 { color: rgba(181, 255, 0,0.40); }
+.a5 { color: rgba(181, 255, 0,0.50); } .a6 { color: rgba(181, 255, 0,0.60); }
+.a7 { color: rgba(181, 255, 0,0.70); } .a8 { color: rgba(181, 255, 0,0.80); }
+.a9 { color: rgba(181, 255, 0,0.90); } .a10 { color: rgba(181, 255, 0,1.0); }

@@ -1,5 +1,6 @@
 'use client'
-import { AboutAsciiPhoto } from '@/app/components/Image/AboutAsciiPhoto'
+// import { AboutAsciiPhoto } from '@/app/components/Image/AboutAsciiPhoto'
+import FloatingText from '@assets/html/FloatingText'
 
 export default function About() {
   return (
@@ -8,10 +9,7 @@ export default function About() {
       <div className='flex flex-wrap'>
         <div className='w-full lg:w-1/2 lg:p-8'>
           <div className='flex items-center justify-center'>
-            <div
-              className='bg-black font-mono text-[6px] md:text-[8px] md:leading-[0.66rem] lg:text-[11px] lg:leading-[0.9rem] leading-[0.5rem]'
-              dangerouslySetInnerHTML={{ __html: AboutAsciiPhoto }}
-            ></div>
+            <FloatingText />
           </div>
         </div>
         <div className='w-full lg:w-1/2 flex justify-center items-center'>

@@ -5,6 +5,9 @@ import { GradientLanding } from '@/app/pages/gradient/GradientLanding'
 import About from '@/app/sections/About'
 import './globals.css'
 import { Quote } from '@components/text/Quote'
+import Header from '@components/v2/Header'
+import Content from '@components/v2/Content'
+import BentoGrid from '@components/v2/BentoGrid'
 // Dynamically import larger components with loading fallbacks
 const PortfolioGrid = dynamic(
   () => import('@/app/components/features/PortfolioGrid/PortfolioGrid'),
@@ -43,14 +46,16 @@ export default function Home() {
       <div id='background' style={{ opacity: 0 }}></div>
 
       <GradientLanding />
-      <Quote></Quote>
+      <Content />
+      <BentoGrid />
+      {/*<Quote></Quote>*/}
 
-      <div className='container mx-auto'>
-        <About />
-        <PortfolioGrid />
-        <TechStack />
-        <FooterSection />
-      </div>
+      {/*<div className='container mx-auto'>*/}
+      {/*  <About />*/}
+      {/*  <PortfolioGrid />*/}
+      {/*  <TechStack />*/}
+      {/*  <FooterSection />*/}
+      {/*</div>*/}
     </>
   )
 }

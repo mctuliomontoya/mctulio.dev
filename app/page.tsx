@@ -2,7 +2,6 @@
 
 // import dynamic from 'next/dynamic'
 import { GradientLanding } from '@/app/pages/gradient/GradientLanding'
-// import About from '@/app/sections/About'
 import './globals.css'
 // import { Quote } from '@components/text/Quote'
 // import Header from '@components/v2/Header'

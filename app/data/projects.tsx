@@ -59,7 +59,7 @@ export const PROJECTS: Project[] = [
     description: (
       <ul className='pl-5 space-y-3 list-disc marker:text-foreground text-white'>
         <li>
-          Collaborated with a team to digitalize a company's process into a
+          Collaborated with a team to digitalize a company&apos;s process into a
           React Native application.
         </li>
         <li>
@@ -92,7 +92,7 @@ export const PROJECTS: Project[] = [
     description: (
       <ul className='pl-5 space-y-3 list-disc marker:text-foreground text-white'>
         <li>
-          Collaborated with a team to digitalize a company's process into a
+          Collaborated with a team to digitalize a company&apos;s process into a
           React Native application.
         </li>
         <li>

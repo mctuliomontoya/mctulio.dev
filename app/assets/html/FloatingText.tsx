@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { prepareWithSegments } from '@chenglou/pretext'
 import './styles.css'
-import { cn } from '@/lib/utils'
 import { twMerge } from 'tailwind-merge'
 
 interface FloatingTextProps {
